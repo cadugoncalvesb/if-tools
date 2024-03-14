@@ -90,16 +90,16 @@ public class CadastroActivity extends AppCompatActivity {
         String email = binding.editEmail.getText().toString().trim();
         String senha = binding.editSenha.getText().toString().trim();
 
-        User user = new User(nome, telefone, email, senha, 1);
+        User user = new User(nome, telefone, email, senha, 3, 3);
         mAuth.createUserWithEmailAndPassword(email, senha).addOnCompleteListener(task -> {
             if (task.isSuccessful()){
                 //finish();
                 //startActivity(new Intent(this, MainActivity.class));
                 FirebaseUser firebaseUser = mAuth.getCurrentUser();
                 String userId = firebaseUser.getUid();
-                mDatabase.child("users").child(userId).setValue(user);
+                mDatabase.child("usuarios").child(userId).setValue(user);
                 Toast.makeText(this, "Sucesso com o id: " + userId, Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(this, MainActivity.class));
+                startActivity(new Intent(this, HomeActivity.class));
 
             } else {
                 binding.progressBar.setVisibility(View.GONE);

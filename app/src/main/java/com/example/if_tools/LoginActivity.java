@@ -33,8 +33,6 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         binding.btnLogin.setOnClickListener(v -> validaDados());
-
-        binding.btnMain.setOnClickListener(v -> startActivity(new Intent(this, MainActivity.class)));
     }
 
     private  void validaDados() {

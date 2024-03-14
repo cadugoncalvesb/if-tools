@@ -26,11 +26,8 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        binding.btnChooseFile.setOnClickListener(v -> openImagePicker());
-
     }
-    private void openImagePicker() {
+   /* private void openImagePicker() {
         Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-        startActivityForResult(intent, REQUEST_PICK_IMAGE);
+        startActivityForResult(intent, REQUEST_PICK_IMAGE);*/
     }
-}
